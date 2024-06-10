@@ -3,7 +3,7 @@ import {
   defaultTransition,
   radiousVariant,
   buttonColorVariant,
-} from "./globals";
+} from "../../styles/globals";
 
 const sizeVariant = {
   md: "px-6 py-3 gap-3",

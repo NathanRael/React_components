@@ -10,7 +10,7 @@ import {
   Toast,
   CheckBox,
   Switchbox,
-} from "../components/ui/components";
+} from "../styles/components";
 import { useForm } from "../context/FormProvider";
 
 const Components = () => {

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { globalInputVariants } from "./globals.input";
+import { globalInputVariants } from "../../styles/globals.input";
 
 const TextInput = ({
   className = "",

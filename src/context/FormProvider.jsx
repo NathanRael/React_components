@@ -18,7 +18,6 @@ const FormProvider = ({ children }) => {
   };
 
   const handleInputChange = (setFormData, e) => {
-    
     const { name, value, type, checked, files } = e.target;
     
     setFormData((prevForm) => {

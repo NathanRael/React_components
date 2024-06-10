@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { defaultTransition, buttonColorVariant } from "./globals";
+import { defaultTransition, buttonColorVariant } from "../../styles/globals";
 
 const iconSizeVariant = {
   md: "size-10 p-2",

@@ -1,8 +1,8 @@
-import { defaultTransition } from "./globals";
-import "./components.style.css";
+import { defaultTransition } from "../../styles/globals";
+import "../../styles/components.style.css";
 import { useEffect, useRef, useState } from "react";
-import { globalInputVariants } from "./globals.input";
-import globalSelectvariants from "./globals.select";
+import { globalInputVariants } from "../../styles/globals.input";
+import globalSelectvariants from "../../styles/globals.select";
 
 const AutoCompleteInput = ({
   options = [

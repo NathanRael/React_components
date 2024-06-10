@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { inputWidth } from "./globals";
+import { inputWidth } from "../../styles/globals";
 import { useEffect, useRef, useState } from "react";
 import Icon from "./Icon";
 

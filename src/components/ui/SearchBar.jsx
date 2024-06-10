@@ -1,5 +1,9 @@
 /* eslint-disable react/prop-types */
-import { inputSizeVariant, inputVariant, radiousVariant } from "./globals";
+import {
+  inputSizeVariant,
+  inputVariant,
+  radiousVariant,
+} from "../../styles/globals";
 
 const SearchBar = ({
   className = "",
