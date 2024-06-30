@@ -1,5 +1,8 @@
-/**Global */
+
+/** Default transition */
 export const defaultTransition = "transition duration-200";
+
+/**Border radius */
 export const radiousVariant = {
     sm: "rounded-sm",
     md: "rounded-md",
@@ -11,7 +14,7 @@ export const radiousVariant = {
     default : "xl"
   };
 
-/** Button */  
+/** Button variants */  
 export const buttonColorVariant = {
   transparent: "text-white font-RobotoMd",
   primary: "bg-primary hover:bg-primary-40 text-white  font-RobotoMd",
@@ -28,7 +31,7 @@ export const buttonColorVariant = {
   "modern-4" : "bg-primary text-white shadow-dark-2 hover:translate-y-[-4px] active:bg-black active:text-primary",
 };
 
-/**Input */
+/**Input variants */
 export const inputVariant = {
   outline : "border border-black-60 placeholder:text-black-60 text-black-60 dark:placeholder:text-white-60 focus:ring-2 hover:ring-2  bg-white dark:border-white-40  dark:text-white-60 dark:bg-[#000] ",
   fill : "text-black-60  border-black-10 bg-black-10  placeholder:text-black-60 outline-none focus:ring-primary focus:ring-2 dark:bg-white-10 dark:placeholder:text-white-60  dark:text-white-60 dark:border-white-60 ",
@@ -39,8 +42,3 @@ export  const inputSizeVariant = {
 };
 
 export const inputWidth = "w-[320px] md:w-[380px]";
-
-// export const selectColorVariant = {
-//   fill : "text-black-60  border-black-10 bg-black-10  placeholder:text-black-60 outline-none focus:ring-primary focus:ring-2 dark:bg-white-10 dark:placeholder:text-white-60  dark:text-white-60 dark:border-white-60 ",
-//   outline : "border border-black-60 placeholder:text-black-60 text-black-60 dark:placeholder:text-white-60 focus:ring-2   bg-white dark:border-white-40  dark:text-white-60 dark:bg-[#000] "
-// }

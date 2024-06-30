@@ -22,6 +22,8 @@ const Components = () => {
     handleError,
     handleSelectionChange,
   } = useForm();
+
+  
   const [formData, setFormData] = useState({
     imgUrl: "",
     name: "",
@@ -30,6 +32,7 @@ const Components = () => {
     option: "",
     file: "",
   });
+
   const [errorData, setErrorData] = useState({
     imgUrl: true,
     name: true,
@@ -64,14 +67,15 @@ const Components = () => {
           disabled={errorData.name}
           size="md"
           rounded="xl"
-          variant="outline"
+          variant="ghost"
         >
-          Button style
+          Button 
         </Button>
         <Button disabled={!checked} size="md" rounded="xl" variant="outline">
           Button style
         </Button>
         <Icon icon="bi-rocket" variant="primary" />
+        
         <FileInput
           name="imgUrl"
           onChange={(e) => handleInputChange(setFormData, e)}
@@ -91,7 +95,7 @@ const Components = () => {
           name="name"
           errorMsg="Incorect input"
           title="Name :"
-          variant="outline"
+          variant="fill"
           size="lg"
           placeholder="Enter your name"
           onChange={(e) => handleInputChange(setFormData, e)}

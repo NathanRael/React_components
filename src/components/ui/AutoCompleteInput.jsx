@@ -57,8 +57,8 @@ const AutoCompleteInput = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+
   useEffect(() => {
-    // console.log("input : " + selectedValue)
     isFocused &&
       setFilteredOptions(
         options.filter((item) =>
@@ -72,7 +72,6 @@ const AutoCompleteInput = ({
       {title !== "" && <p className="text-black dark:text-white">{title}</p>}
       <input
         onFocus={() => setIsFocused(true)}
-        // onClick={() => setIsFocused(true)}
         ref={inputRef}
         type={type}
         className={`${globalInputVariants.constant} ${
