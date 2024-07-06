@@ -27,7 +27,10 @@ const FileInput = ({
           name: e.target.files[0].name,
           path: filePath,
         });
-        setFile(selectedFile);
+        setFile({
+          name: e.target.files[0].name,
+          path: filePath,
+        });
       });
     }
   };

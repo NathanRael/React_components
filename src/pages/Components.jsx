@@ -59,6 +59,7 @@ const Components = () => {
           variant="outline"
           label="checked"
           onChange={(e) => setChecked(e.target.checked)}
+          
         />
         <Button
           disabled={errorData.name}

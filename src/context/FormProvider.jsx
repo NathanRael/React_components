@@ -35,7 +35,7 @@ const FormProvider = ({ children }) => {
   const handleSelectionChange = (setFormData) => (selected, name) => {
     setFormData((prevForm) => ({ ...prevForm, [name]: selected }));
   };
-
+  
   const handleError = (setErrorData) => (error, e) => {
     const name = e.target.name;
     setErrorData((prevForm) => ({ ...prevForm, [name]: error }));

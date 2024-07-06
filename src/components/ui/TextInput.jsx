@@ -27,7 +27,7 @@ const TextInput = ({
   }, [value]);
   
   return (
-    <div className={`flex  flex-col gap-2 w-full`}>
+    <div className={`flex  flex-col gap-2 ${block ? 'w-full' : globalInputVariants.width}`}>
       <p className="text-black dark:text-white">{title}</p>
       <input
         ref={inputRef}
@@ -36,8 +36,7 @@ const TextInput = ({
           globalInputVariants.rounded[rounded]
         } ${globalInputVariants.variant[variant]} ${
           globalInputVariants.size[size]
-        }   ${
-          block ? "w-full" : `${globalInputVariants.size[size]}`
+        }   ${ globalInputVariants.size[size]}
         }  ${className}`}
         placeholder={placeholder}
         onChange={(e) => {

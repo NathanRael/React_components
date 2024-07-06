@@ -1,4 +1,3 @@
-/**Put this in your tailwind.config.js file in order to show some style*/
 
 export default {
   theme: {
