@@ -27,9 +27,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </Router>
   </React.StrictMode>
 );
-
-``` 
-
+```
+6. Install `prop-Types` package : 
+```
+npm i prop-Types
+```
 
 > [!NOTE]
 > If you want to use some predefined component styles, `paste the tailwind config below` into your `tailwind.config.js` file :
