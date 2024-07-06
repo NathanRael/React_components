@@ -17,10 +17,8 @@ const Components = () => {
   const [checked, setChecked] = useState(false);
   const {
     handleInputChange,
-    fieldError,
     checkFieldError,
     handleError,
-    handleSelectionChange,
   } = useForm();
 
   
@@ -32,7 +30,7 @@ const Components = () => {
     option: "",
     file: "",
   });
-
+  
   const [errorData, setErrorData] = useState({
     imgUrl: true,
     name: true,
@@ -42,7 +40,6 @@ const Components = () => {
   });
 
   useEffect(() => {
-    // console.log(formData);
   }, [formData]);
   useEffect(() => {
     checkFieldError(errorData);
@@ -71,10 +68,11 @@ const Components = () => {
         >
           Button 
         </Button>
-        <Button disabled={!checked} size="md" rounded="xl" variant="outline">
+        <Button  disabled={!checked} size="md" rounded="xl" variant="outline">
           Button style
         </Button>
         <Icon icon="bi-rocket" variant="primary" />
+        
         
         <FileInput
           name="imgUrl"
@@ -102,6 +100,7 @@ const Components = () => {
           onError={handleError(setErrorData)}
           value={formData.name}
         />
+        
 
         <TextInput
           pattern={/^[a-z]+$/i}

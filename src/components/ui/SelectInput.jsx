@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import { defaultTransition } from "../../styles/globals";
 import "../../styles/components.style.css";
 import { useEffect, useRef, useState } from "react";
@@ -41,11 +43,9 @@ const SelectInput = ({
     onError(error, { target: { name: name } });
   }, [loading]);
 
-  onChange &&
-    useEffect(() => {
-      onChange({ target: { value: selectedItem, name: name } });
-    }, [selectedItem]);
-
+  useEffect(() => {
+    onChange({ target: { value: selectedItem, name: name } });
+  }, [selectedItem]);
 
   useEffect(() => {
     if (loading) {
@@ -65,6 +65,7 @@ const SelectInput = ({
         className={`flex items-start justify-start flex-col gap-2 w-full   relative `}
       >
         <div
+          role="button"
           onClick={() => {
             setOpened((prev) => !prev);
           }}
@@ -72,7 +73,11 @@ const SelectInput = ({
             globalInputVariants.size[size]
           } ${defaultTransition} ${globalSelectvariants.variant[variant]} ${
             globalInputVariants.rounded[rounded]
-          }  ${block ? "w-full" : `items-start justify-start `} ${className}`}
+          }  ${
+            block
+              ? "w-full"
+              : `items-start justify-start ${globalInputVariants.width} `
+          } ${className}`}
         >
           {inverseIcon && (
             <i
@@ -91,7 +96,7 @@ const SelectInput = ({
           )}
         </div>
         <ul
-          className={` ${globalSelectvariants.constant} ${
+          className={` ${block ? "w-full" : globalInputVariants.width} ${
             globalSelectvariants.variant[variant]
           } ${size === "md" ? "top-[54px]" : "top-[64px]"} ${
             opened
@@ -107,6 +112,7 @@ const SelectInput = ({
           ) : (
             options?.map((item) => (
               <li
+                role="button"
                 onClick={() => {
                   setSelectedItem(
                     optionId === "option"
@@ -126,6 +132,23 @@ const SelectInput = ({
       </div>
     </div>
   );
+};
+
+SelectInput.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.object),
+  name: PropTypes.string,
+  className: PropTypes.string,
+  title: PropTypes.string,
+  icon: PropTypes.string,
+  variant: PropTypes.string,
+  size: PropTypes.string,
+  optionId: PropTypes.string,
+  rounded: PropTypes.string,
+  inverseIcon: PropTypes.bool,
+  loading: PropTypes.bool,
+  block: PropTypes.bool,
+  onChange: PropTypes.func,
+  onError: PropTypes.func,
 };
 
 export default SelectInput;

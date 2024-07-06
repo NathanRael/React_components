@@ -1,8 +1,7 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-import { inputWidth } from "../../styles/globals";
+import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from "react";
 import Icon from "./Icon";
+import { globalInputVariants } from "../../styles/globals.input";
 
 const FileInput = ({
   setFile = () => {},
@@ -23,7 +22,7 @@ const FileInput = ({
       fileReader.readAsDataURL(e.target.files[0]);
 
       fileReader.addEventListener("load", function () {
-        filePath = this.result;
+        filePath = fileReader.result;
         setSelectedFile({
           name: e.target.files[0].name,
           path: filePath,
@@ -34,7 +33,7 @@ const FileInput = ({
   };
 
   const handleClick = (ref) => {
-    ref.current && ref.current.click();
+    if (ref.current) ref.current.click();
   };
 
   const removeFiles = () => {
@@ -44,17 +43,16 @@ const FileInput = ({
     setFile("");
   };
 
-
   useEffect(() => {
     onError(error, { target: { name: name } });
   }, [error]);
 
+  const fileInputClassName = `flex items-center justify-between ${
+    block ? "w-full" : `${globalInputVariants.width}`
+  } ${className}`;
+
   return (
-    <div
-      className={`flex items-center justify-between ${
-        block ? "w-full" : `${inputWidth}`
-      } ${className}`}
-    >
+    <div className={fileInputClassName}>
       <Icon
         icon="bi-folder"
         size="lg"
@@ -79,12 +77,20 @@ const FileInput = ({
             ?.split("\\")
             [fileRef.current?.value?.split("\\").length - 1].substr(-20) ||
             "Ajouter un photo"}
-          {/* {selectedFile?.name?.substr(-20) || "Ajouter un photo"} */}
         </label>
       </div>
       <Icon size="md" variant="danger" icon="bi-trash" onClick={removeFiles} />
     </div>
   );
+};
+
+FileInput.propTypes = {
+  setFile: PropTypes.func,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  onError: PropTypes.func,
+  className: PropTypes.string,
+  block: PropTypes.bool,
 };
 
 export default FileInput;

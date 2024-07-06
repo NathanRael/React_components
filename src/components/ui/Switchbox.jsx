@@ -1,41 +1,5 @@
-const switchboxVariant = {
-  constant: `
-      border
-      relative  
-      peer peer-checked:after:translate-x-full 
-      rtl:peer-checked:after:-translate-x-full 
-      after:content-[''] 
-      after:border 
-      after:absolute after:top-[1px] 
-      after:start-[2px] 
-    after:transition-all  
-       
-    `,
-  variant: {
-    primary: `
-    peer-checked:after:border-white
-    after:bg-white 
-    after:border-white 
-    peer-checked:bg-primary
-    bg-white-40  
-        `,
-    outline: `
-    border-white
-    peer-checked:after:bg-white
-    after:border-white
-    
-    `,
-  },
-  size: {
-    sm: "",
-    md: "w-12 h-6 after:size-[20px]",
-    lg: "",
-  },
-
-  radious: {
-    default: "rounded-full after:rounded-full",
-  },
-};
+import PropTypes from "prop-types";
+import globalSwitchboxVariants from "../../styles/global.switchbox";
 
 const Switchbox = ({
   className = "",
@@ -61,8 +25,8 @@ const Switchbox = ({
         className="sr-only peer"
       />
       <div
-        className={`${switchboxVariant.constant} ${switchboxVariant.size[size]}
-        ${switchboxVariant.radious[rounded]} ${switchboxVariant.variant[variant]}
+        className={`${globalSwitchboxVariants.constants} ${globalSwitchboxVariants.size[size]}
+        ${globalSwitchboxVariants.radious[rounded]} ${globalSwitchboxVariants.variant[variant]}
         ${className}`}
       ></div>
       {label && (
@@ -70,6 +34,18 @@ const Switchbox = ({
       )}
     </label>
   );
+};
+
+Switchbox.propTypes = {
+  className: PropTypes.string,
+  label: PropTypes.string,
+  onChange: PropTypes.func,
+  onError: PropTypes.func,
+  variant: PropTypes.string,
+  size: PropTypes.string,
+  rounded: PropTypes.string,
+  disabled: PropTypes.bool,
+  name: PropTypes.string,
 };
 
 export default Switchbox;

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import { useEffect } from "react";
 import { globalInputVariants } from "../../styles/globals.input";
 
@@ -17,14 +19,13 @@ const TextInput = ({
   onChange = () => {},
   onError = () => {},
   inputRef,
-  // formData,
   value,
 }) => {
-  // value = value || formData?.[name];
   const error = !isValid || !pattern.test(value);
   useEffect(() => {
     onError(error, { target: { name: name } });
   }, [value]);
+  
   return (
     <div className={`flex  flex-col gap-2 w-full`}>
       <p className="text-black dark:text-white">{title}</p>
@@ -52,6 +53,28 @@ const TextInput = ({
       )}
     </div>
   );
+};
+
+TextInput.propTypes = {
+  className: PropTypes.string,
+  variant: PropTypes.string,
+  type: PropTypes.string,
+  placeholder: PropTypes.string,
+  title: PropTypes.string,
+  errorMsg: PropTypes.string,
+  name: PropTypes.string,
+  size: PropTypes.string,
+  rounded: PropTypes.string,
+  isValid: PropTypes.bool,
+  pattern: PropTypes.instanceOf(RegExp),
+  block: PropTypes.bool,
+  onChange: PropTypes.func,
+  onError: PropTypes.func,
+  inputRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default TextInput;

@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
+
 const Empty = ({ value = "Liste vide", className }) => {
   return (
     <p className={`text-subtitle-1 text-danger mx-auto ${className}`}>
@@ -6,5 +7,10 @@ const Empty = ({ value = "Liste vide", className }) => {
     </p>
   );
 };
+
+Empty.propTypes = {
+  value : PropTypes.string,
+  className : PropTypes.string,
+}
 
 export default Empty;

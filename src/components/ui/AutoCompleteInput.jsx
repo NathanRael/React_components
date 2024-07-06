@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { defaultTransition } from "../../styles/globals";
 import "../../styles/components.style.css";
 import { useEffect, useRef, useState } from "react";
@@ -57,7 +58,6 @@ const AutoCompleteInput = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-
   useEffect(() => {
     isFocused &&
       setFilteredOptions(
@@ -116,6 +116,30 @@ const AutoCompleteInput = ({
       )}
     </div>
   );
+};
+
+AutoCompleteInput.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.object),
+  className: PropTypes.string,
+  variant: PropTypes.string,
+  type: PropTypes.string,
+  placeholder: PropTypes.string,
+  title: PropTypes.string,
+  errorMsg: PropTypes.string,
+  name: PropTypes.string,
+  size: PropTypes.string,
+  rounded: PropTypes.string,
+  optionId: PropTypes.string,
+  pattern: PropTypes.instanceOf(RegExp),
+  isValid: PropTypes.bool,
+  block: PropTypes.bool,
+  onChange: PropTypes.func,
+  onError: PropTypes.func,
+  inputRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default AutoCompleteInput;

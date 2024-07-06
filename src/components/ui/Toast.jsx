@@ -1,10 +1,18 @@
+import PropTypes from "prop-types";
 import Icon from "./Icon";
 
-const Toast = ({ className = "", error = false, message = "message", handleClick }) => {
+const Toast = ({
+  className = "",
+  error = false,
+  message = "message",
+  handleClick = () => {},
+}) => {
   return (
     <div
       className={`flex items-center gap-6  py-1 px-3 rounded-lg justify-between w-fit ${
-        !error ? "dark:text-success dark:bg-success-40 bg-success text-white" : "dark:text-danger bg-danger text-white dark:bg-danger-40"
+        !error
+          ? "dark:text-success dark:bg-success-40 bg-success text-white"
+          : "dark:text-danger bg-danger text-white dark:bg-danger-40"
       }  ${className} `}
     >
       <i
@@ -28,5 +36,12 @@ const Toast = ({ className = "", error = false, message = "message", handleClick
     </div>
   );
 };
+
+Toast.propTypes = {
+  className : PropTypes.string,
+  error : PropTypes.string,
+  message : PropTypes.string,
+  handleClick : PropTypes.func
+}
 
 export default Toast;

@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 
 const Loader = ({ className }) => {
   return (
@@ -10,4 +10,7 @@ const Loader = ({ className }) => {
   );
 };
 
+Loader.propTypes = {
+  className : PropTypes.string
+}
 export default Loader;

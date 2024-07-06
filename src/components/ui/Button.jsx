@@ -1,14 +1,8 @@
-/* eslint-disable react/prop-types */
-import {
-  defaultTransition,
-  radiousVariant,
-  buttonColorVariant,
-} from "../../styles/globals";
+import PropTypes from "prop-types";
 
-const sizeVariant = {
-  md: "px-6 py-3 gap-3",
-  lg: "px-8 py-4 gap-4",
-};
+import {  defaultTransition } from "../../styles/globals";
+import globalButtonVariants from "../../styles/globals.button";
+
 
 const Button = ({
   children = "Button",
@@ -17,59 +11,50 @@ const Button = ({
   variant = "primary",
   icon = "",
   rounded = "xl",
-  onClick,
+  onClick = () => {},
   transition = defaultTransition,
   inverseIcon = false,
   disabled = false,
   block = false,
   loading = false,
 }) => {
+  const buttonClass = `${globalButtonVariants.constants} ${globalButtonVariants.radious[rounded]} ${
+    block ? "w-full" : "w-fit"
+  } ${
+    disabled ? globalButtonVariants.variant.disabled : globalButtonVariants.variant[variant]
+  } ${transition} ${globalButtonVariants.size[size]} ${className} ${
+    icon ? (inverseIcon ? "flex-row-reverse" : "flex-row") : ""
+  } overflow-hidden select-none flex items-center justify-center text-base font-RobotoMd`;
+
   return (
-    <>
-      {!icon ? (
-        <button
-          disabled={disabled}
-          onClick={onClick}
-          className={`overflow-hidden select-none text-base font-RobotoMd  
-          ${radiousVariant[rounded]}
-          ${block ? "w-full" : "w-fit"} ${
-            disabled
-              ? buttonColorVariant["disabled"]
-              : buttonColorVariant[variant]
-          } ${transition} ${sizeVariant[size]} ${className}`}
-        >
-          {loading ? (
-            <i className="bi-hourglass-top animate-spin"></i>
-          ) : (
-            children
-          )}
-        </button>
+    <button disabled={disabled} onClick={onClick} className={buttonClass}>
+      {loading ? (
+        <i className="bi-hourglass-top animate-spin"></i>
+      ) : icon ? (
+        <>
+          <i className={`${icon} ${size === "md" ? "" : "text-icon"}`}></i>
+          <p>{children}</p>
+        </>
       ) : (
-        <button
-          disabled={disabled}
-          onClick={onClick}
-          className={`overflow-hidden select-none flex items-center justify-center text-base font-RobotoMd    
-          ${radiousVariant[rounded]}  
-          ${inverseIcon ? "flex-row-reverse" : "flex-row"} 
-          ${block ? "w-full" : "w-fit"} 
-          ${
-            disabled
-              ? buttonColorVariant["disabled"]
-              : buttonColorVariant[variant]
-          } ${transition} ${sizeVariant[size]} ${className}`}
-        >
-          {loading ? (
-            <i className="bi-hourglass-top animate-spin"></i>
-          ) : (
-            <>
-              <i className={`${icon} ${size === "md" ? "" : "text-icon"}`}></i>
-              <p>{children}</p>
-            </>
-          )}
-        </button>
+        children
       )}
-    </>
+    </button>
   );
+};
+
+Button.propTypes = {
+  children: PropTypes.string.isRequired,
+  size: PropTypes.number,
+  className: PropTypes.string,
+  variant: PropTypes.string,
+  icon: PropTypes.string,
+  rounded: PropTypes.string,
+  onClick: PropTypes.func,
+  transition: PropTypes.string,
+  inverseIcon: PropTypes.bool,
+  block: PropTypes.bool,
+  loading: PropTypes.bool,
+  disabled: PropTypes.bool,
 };
 
 export default Button;

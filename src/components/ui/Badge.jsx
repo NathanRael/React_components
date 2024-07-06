@@ -1,10 +1,16 @@
-/* eslint-disable react/prop-types */
+/**
+ *  Under development
+ */
+
+import PropTypes from "prop-types";
+
 const Badge = ({
   className,
   value = "badge",
   size = "lg",
   icon,
-  iconColor = "success",
+  iconColor = "primary",
+  variant = "primary"
 }) => {
   const sizeVariant = {
     md: "px-2 py-1 text-small-2",
@@ -27,4 +33,12 @@ const Badge = ({
   );
 };
 
+Badge.propTypes = {
+  className: PropTypes.string,
+  value: PropTypes.string,
+  size: PropTypes.string,
+  icon: PropTypes.string,
+  iconColor: PropTypes.string,
+  variant : PropTypes.string,
+};
 export default Badge;
