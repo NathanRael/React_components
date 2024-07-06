@@ -9,6 +9,27 @@ This documentation covers the usage of a set of customizable React components. T
 ```
   2. Copy all of the file inside the  [src/components/ui](https://github.com/NathanRael/React_components/tree/main/src/components/ui) into your `src/components/ui`  directory. 
   3. Repeat the same process for all of the files within the [src/styles](https://github.com/NathanRael/React_components/tree/main/src/styles)  folder, and place it inside your `src/styles` directory.
+  4. Copy the  `FormProvider.jsx` file located at `src/context/` in your `src/context` folder.
+  5. Add the `FormProvider` in your `main.jsx` file :
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import { BrowserRouter as Router } from "react-router-dom";
+import FormProvider from "./context/FormProvider.jsx";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <Router>
+          <FormProvider>
+            <App />
+          </FormProvider>
+    </Router>
+  </React.StrictMode>
+);
+
+``` 
+
 
 > [!NOTE]
 > If you want to use some predefined component styles, `paste the tailwind config below` into your `tailwind.config.js` file :
@@ -161,7 +182,7 @@ export default {
 
 > [!NOTE]
 > These styles can be applied in almost all  other components.
-> if you want to `customise or add a new style`, edit the file in the `src/styles/globals.componentName.js`
+> if you want to `customise or add a new style`, edit the file in the `src/styles/globals.componentName.js`,
 
 
 
