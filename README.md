@@ -108,10 +108,9 @@ export default {
 
 ## Component UI usage 
 ![Component UI preveview](./src/asstes/images/components-ui.png)
- 
+
+ ### Variant
 ```jsx
-<div className="flex flex-col gap-4 items-center justify-center w-full">
-      <div className="text-title-2 text-white text-left w-full">Variants</div>
       {/* Variant */}
       <div className="flex w-full justify-evenly items-center flex-col gap-6">
         <div className="flex w-full justify-evenly items-center">
@@ -120,6 +119,9 @@ export default {
           <Button variant="ghost">Ghost</Button>
           <Button variant="disabled">Disabled</Button>
         </div>
+```
+### Block
+```jsx
 
         {/* Block */}
         <div className="flex w-full justify-evenly items-center flex-col gap-2">
@@ -130,7 +132,9 @@ export default {
           </Button>
           <Button variant="outline">Normal</Button>
         </div>
-
+```
+### Size
+```jsx
         {/* Size */}
         <div className="text-title-2 text-white text-left w-full">Sizes</div>
 
@@ -142,7 +146,10 @@ export default {
             Medium
           </Button>
         </div>
+```
 
+### Radious
+```jsx
         {/* Radious */}
         <div className="text-title-2 text-white text-left w-full">Radious</div>
 
@@ -157,7 +164,10 @@ export default {
             full
           </Button>
         </div>
+```
 
+### Icon
+```jsx
         {/* Icon */}
         <div className="text-title-2 text-white text-left w-full">Icon</div>
 
@@ -169,7 +179,10 @@ export default {
             Icon inversed
           </Button>
         </div>
+```
 
+### Loading
+```jsx
         {/* Loading */}
         <div className="text-title-2 text-white text-left w-full">Loading</div>
 
