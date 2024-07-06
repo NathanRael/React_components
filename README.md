@@ -5,10 +5,10 @@ This documentation covers the usage of a set of customizable React components. T
 
 
   1. Copy all of the file inside the  [ui](https://github.com/NathanRael/React_components/tree/main/src/components/ui) inside your `src/components/ui`  directory. 
-  2. Make the same process for all of the file within the [styles](https://github.com/NathanRael/React_components/tree/main/src/styles)  folder, and place it inside your `src/styles` directory.
+  2. Repeat the same process for all of the files within the [styles](https://github.com/NathanRael/React_components/tree/main/src/styles)  folder, and place it inside your `src/styles` directory.
 
 > [!NOTE]
-> If you want to use some predefined components style, `paste the tailwind config below` into your `tailwind.config.js` file :
+> If you want to use some predefined component styles, `paste the tailwind config below` into your `tailwind.config.js` file :
 
 ```js
 /**Put this in your tailwind.config.js if you want to use some predefined styke*/
@@ -157,7 +157,7 @@ export default {
 ```
 
 > [!NOTE]
-> Those styles can be applied in almost all of the other components
+> These styles can be applied in almost all  other components.
 > if you want to `customise or add a new style`, edit the file in the `src/styles/globals.componentName.js`
 
 
