@@ -81,11 +81,11 @@ export default {
   - [ ] Toast
 
 ## Component UI usage 
-
-
-### Button 
+![Component UI preveview](./src/asstes/images/components-ui.png)
+ 
 ```jsx
 <div className="flex flex-col gap-4 items-center justify-center w-full">
+      <div className="text-title-2 text-white text-left w-full">Variants</div>
       {/* Variant */}
       <div className="flex w-full justify-evenly items-center flex-col gap-6">
         <div className="flex w-full justify-evenly items-center">
@@ -97,6 +97,8 @@ export default {
 
         {/* Block */}
         <div className="flex w-full justify-evenly items-center flex-col gap-2">
+          <div className="text-title-2 text-white text-left w-full">Block</div>
+
           <Button variant="primary" block>
             Block
           </Button>
@@ -104,6 +106,8 @@ export default {
         </div>
 
         {/* Size */}
+        <div className="text-title-2 text-white text-left w-full">Sizes</div>
+
         <div className="flex w-full justify-evenly items-center  gap-2">
           <Button variant="primary" size="lg">
             Large
@@ -113,7 +117,24 @@ export default {
           </Button>
         </div>
 
+        {/* Radious */}
+        <div className="text-title-2 text-white text-left w-full">Radious</div>
+
+        <div className="flex w-full justify-evenly items-center  gap-2">
+          <Button variant="primary" rounded="none">
+            None
+          </Button>
+          <Button variant="primary" rounded="lg">
+            Large
+          </Button>
+          <Button variant="primary" rounded="full">
+            full
+          </Button>
+        </div>
+
         {/* Icon */}
+        <div className="text-title-2 text-white text-left w-full">Icon</div>
+
         <div className="flex w-full justify-evenly items-center  gap-2">
           <Button variant="primary" icon="bi bi-person">
             Icon
@@ -124,22 +145,26 @@ export default {
         </div>
 
         {/* Loading */}
+        <div className="text-title-2 text-white text-left w-full">Loading</div>
+
         <div className="flex w-full justify-evenly items-center  gap-2">
           <Button variant="primary" icon="bi bi-person" loading>
             Icon
-            </Button>
+          </Button>
         </div>
       </div>
     </div>
 ```
+
 > [!NOTE]
 > Those styles can be applied in almost all of the other components
 > if you want to `customise or add a new style`, edit the file in the `src/styles/globals.componentName.js`
 
-### Other component W.I.P
 
 
 ## Component error handler example
+![Component UI preveview](./src/asstes/images/comonents-error-handler.png)
+
 ```jsx
 import { useEffect, useState } from "react";
 import { useForm } from "../context/FormProvider";
@@ -153,7 +178,6 @@ import {
 } from "../styles/components";
 
 const Test = () => {
-
   const countries = [
           {option : "Madagascar"},
           {option : "United state"},
@@ -278,11 +302,9 @@ const Test = () => {
   );
 };
 
-const InputTest = () => {};
-
-export default Test;
-
 ```
 
-
-
+## Author
+ - Full name : `RALAIVOAVY Natanaël`
+ - Email : [ralaivoavy.natanael@gmail.com](mailto:ralaivoavy.natanael@gmail.com)
+ 

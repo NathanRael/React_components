@@ -11,7 +11,14 @@ import {
 
 const Test = () => {
   return (
+    <InputTest/>
+  );
+};
+
+const ComponentUI = () => {
+  return (
     <div className="flex flex-col gap-4 items-center justify-center w-full">
+      <div className="text-title-2 text-white text-left w-full">Variants</div>
       {/* Variant */}
       <div className="flex w-full justify-evenly items-center flex-col gap-6">
         <div className="flex w-full justify-evenly items-center">
@@ -23,6 +30,8 @@ const Test = () => {
 
         {/* Block */}
         <div className="flex w-full justify-evenly items-center flex-col gap-2">
+          <div className="text-title-2 text-white text-left w-full">Block</div>
+
           <Button variant="primary" block>
             Block
           </Button>
@@ -30,6 +39,8 @@ const Test = () => {
         </div>
 
         {/* Size */}
+        <div className="text-title-2 text-white text-left w-full">Sizes</div>
+
         <div className="flex w-full justify-evenly items-center  gap-2">
           <Button variant="primary" size="lg">
             Large
@@ -38,8 +49,24 @@ const Test = () => {
             Medium
           </Button>
         </div>
+        {/* Size */}
+        <div className="text-title-2 text-white text-left w-full">Radious</div>
+
+        <div className="flex w-full justify-evenly items-center  gap-2">
+          <Button variant="primary" rounded="none">
+            None
+          </Button>
+          <Button variant="primary" rounded="lg">
+            Large
+          </Button>
+          <Button variant="primary" rounded="full">
+            full
+          </Button>
+        </div>
 
         {/* Icon */}
+        <div className="text-title-2 text-white text-left w-full">Icon</div>
+
         <div className="flex w-full justify-evenly items-center  gap-2">
           <Button variant="primary" icon="bi bi-person">
             Icon
@@ -50,15 +77,17 @@ const Test = () => {
         </div>
 
         {/* Loading */}
+        <div className="text-title-2 text-white text-left w-full">Loading</div>
+
         <div className="flex w-full justify-evenly items-center  gap-2">
           <Button variant="primary" icon="bi bi-person" loading>
             Icon
-            </Button>
+          </Button>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const InputTest = () => {
   const countries = [
@@ -95,7 +124,7 @@ const InputTest = () => {
   }, [errorData]);
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 w-full items-center justify-center">
       <div className="flex flex-col gap-4 w-fit">
         <TextInput
           title="Name"
@@ -125,7 +154,7 @@ const InputTest = () => {
           name="accountType"
           title="Account type"
           variant="fill"
-          size="md"
+          size="lg"
           options={[{ option: "Student" }, { option: "Society" }]}
           icon="bi bi-arrow-down" // Default icon
           onError={handleError(setErrorData)}
@@ -171,7 +200,7 @@ const InputTest = () => {
       <div className="flex items-center gap-4">
         <Button
           onClick={() => alert("submited")}
-          disabled={errorData.accountType}
+          disabled={errorData.phone}
           variant="primary"
         >
           Submit
