@@ -3,9 +3,12 @@ This documentation covers the usage of a set of customizable React components. T
 
 ## Installation
 
-
-  1. Copy all of the file inside the  [ui](https://github.com/NathanRael/React_components/tree/main/src/components/ui) inside your `src/components/ui`  directory. 
-  2. Repeat the same process for all of the files within the [styles](https://github.com/NathanRael/React_components/tree/main/src/styles)  folder, and place it inside your `src/styles` directory.
+  1. Clone the repository 
+```git 
+  git clone https://github.com/NathanRael/React_components
+```
+  2. Copy all of the file inside the  [src/components/ui](https://github.com/NathanRael/React_components/tree/main/src/components/ui) into your `src/components/ui`  directory. 
+  3. Repeat the same process for all of the files within the [src/styles](https://github.com/NathanRael/React_components/tree/main/src/styles)  folder, and place it inside your `src/styles` directory.
 
 > [!NOTE]
 > If you want to use some predefined component styles, `paste the tailwind config below` into your `tailwind.config.js` file :
