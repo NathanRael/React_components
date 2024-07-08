@@ -6,6 +6,7 @@ import {
   CheckBox,
   FileInput,
   SelectInput,
+  TextArea,
   TextInput,
 } from "../styles/components";
 
@@ -138,6 +139,8 @@ const InputTest = () => {
           value={formData.name}
         />
 
+        <TextArea/>
+
         <TextInput
           title="Phone"
           name="phone"
@@ -156,7 +159,6 @@ const InputTest = () => {
           variant="fill"
           size="lg"
           options={[{ option: "Student" }, { option: "Society" }]}
-          icon="bi bi-arrow-down" // Default icon
           onError={handleError(setErrorData)}
           onChange={(e) => handleInputChange(setFormData, e)}
         />
@@ -168,7 +170,7 @@ const InputTest = () => {
           variant="fill"
           errorMsg="Country not found"
           isValid={countries.some(
-            (country) => formData.select === country.option
+              (country) => formData.select === country.option
           )}
           value={formData.select}
           onChange={(e) => handleInputChange(setFormData, e)}
